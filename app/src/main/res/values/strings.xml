@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CarSetup</string>
+
+    <!--
+    <string-array name="dropmenuarray">
+        <item>Version</item>
+        <item>Theme</item>
+    </string-array>
+    -->
+
+</resources>

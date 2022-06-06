@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    /* General */
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFeeeeee</color>
+
+    /* Main */
+
+    <color name="yellowFirst">#fde237</color>
+    <color name="yellowSecond">#fde459</color>
+    <color name="yellowThird">#D8BB1B</color>
+
+    /*  */
+
+    <color name="redtest">#FF0000</color>
+
+</resources>
