@@ -1,4 +1,4 @@
-package com.example.carsetup.ui.dashboard;
+package com.example.carsetup.ui.add;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,23 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.carsetup.databinding.FragmentDashboardBinding;
+import com.example.carsetup.databinding.FragmentAddBinding;
 
-public class DashboardFragment extends Fragment {
+public class AddFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
-    private FragmentDashboardBinding binding;
+    private AddViewModel addViewModel;
+    private FragmentAddBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        addViewModel =
+                new ViewModelProvider(this).get(AddViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentAddBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textAdd;
+        addViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

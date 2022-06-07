@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">CarSetup</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="home"></string>
+    <string name="tasks"></string>
+    <string name="add"></string>
+    <string name="notifications"></string>
+    <string name="settings"></string>
 
     <!--
     <string-array name="dropmenuarray">
@@ -7,5 +14,4 @@
         <item>Theme</item>
     </string-array>
     -->
-
 </resources>

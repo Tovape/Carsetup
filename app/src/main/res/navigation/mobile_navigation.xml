@@ -8,25 +8,31 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.carsetup.ui.home.HomeFragment"
-        android:label="afs"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.carsetup.ui.dashboard.DashboardFragment"
-        android:label="xvz"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.carsetup.ui.notifications.NotificationsFragment"
-        android:label="bds"
-        tools:layout="@layout/fragment_notifications" />
+        android:label="Home"
+        tools:layout="Home" />
 
     <fragment
         android:id="@+id/navigation_tasks"
         android:name="com.example.carsetup.ui.tasks.TasksFragment"
-        android:label="TASKS"
-        tools:layout="@layout/fragment_tasks" />
+        android:label="Tasks"
+        tools:layout="Tasks" />
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.example.carsetup.ui.add.AddFragment"
+        android:label="Add"
+        tools:layout="Add" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.carsetup.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="Notifications" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.carsetup.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="Settings" />
 
 </navigation>

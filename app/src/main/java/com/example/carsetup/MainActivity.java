@@ -3,12 +3,20 @@ package com.example.carsetup;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.carsetup.databinding.ActivityMainBinding;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,34 +35,69 @@ public class MainActivity extends AppCompatActivity {
 
     // Variables
     private ActivityMainBinding binding;
+    public DrawerLayout drawerLayout;
+    public ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // Connect Database
         ConnectMySql connectMySql = new ConnectMySql();
         connectMySql.execute("");
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        // Drawer
+        /*
+        drawerLayout = findViewById(R.id.container);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
+        // pass the Open and Close toggle for the drawer layout listener
+        // to toggle the button
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        // to make the Navigation drawer icon always appear on the action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        */
+
+        // Bottom Navigator
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_tasks).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_tasks, R.id.navigation_add, R.id.navigation_notifications, R.id.navigation_settings).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        // In case actionbar is visible - NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-
-        // Set Background In Fragment
+        // Set Backgrounds In Fragment
         /*
         Fragment fragment = this.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_activity_main);
         fragment.getView().setBackgroundColor(Color.RED);
         */
 
+        // Set StatusBar Color - Just use Themes.xml
+        /*
+        Window window = MainActivity.this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.mainColor));
+        */
+
+        // General
+
+
     }
+
+    /* Drawer Function
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    */
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
         String checkconnection = "0";

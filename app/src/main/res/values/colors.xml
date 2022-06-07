@@ -8,12 +8,13 @@
 
     /* Main */
 
-    <color name="yellowFirst">#fde237</color>
-    <color name="yellowSecond">#fde459</color>
-    <color name="yellowThird">#D8BB1B</color>
+    <color name="mainColor">#D7BCDA</color>
+    <color name="secondColor">#422844</color>
+    <color name="thirdColor">#E3CAE5</color>
+    <color name="fourthColor">#211F22</color>
+    <color name="fifthColor">#3B383C</color>
 
     /*  */
 
-    <color name="redtest">#FF0000</color>
 
 </resources>
