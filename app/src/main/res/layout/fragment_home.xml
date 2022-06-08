@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,19 +9,413 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:layout_marginRight="@dimen/mainPadding"
+            android:layout_marginLeft="@dimen/mainPadding"
+            android:layout_marginTop="@dimen/mainPadding"
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"/>
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/carname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:paddingRight="@dimen/mainPadding"
+                        android:paddingLeft="4dp"
+                        android:singleLine="true"
+                        android:text="Volvo XC40"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bigFont" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/caryear"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.16"
+                            android:paddingLeft="4dp"
+                            android:textSize="@dimen/mediumFont"
+                            android:textColor="@color/softwhite"
+                            android:text="2018 - " />
+
+                        <TextView
+                            android:id="@+id/carstatus"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.24"
+                            android:text=" Operative"
+                            android:textSize="@dimen/mediumFont"
+                            android:textColor="@color/greenStatus" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/eco"
+                    android:scaleType="fitCenter"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/mainPadding"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:background="@drawable/carphoto" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/mainPadding"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/unselected"
+                    android:layout_marginRight="@dimen/selectorPadding"
+                    android:layout_marginLeft="@dimen/selectorPadding"
+                    android:layout_marginTop="6dp"/>
+                <ImageButton
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/unselected"
+                    android:layout_marginRight="@dimen/selectorPadding"
+                    android:layout_marginLeft="@dimen/selectorPadding"
+                    android:layout_marginTop="6dp"/>
+
+                <ImageButton
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="@dimen/selectorPadding"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="@dimen/selectorPadding"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/selected" />
+
+                <ImageButton
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/unselected"
+                    android:layout_marginRight="@dimen/selectorPadding"
+                    android:layout_marginLeft="@dimen/selectorPadding"
+                    android:layout_marginTop="6dp"/>
+
+                <ImageButton
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/unselected"
+                    android:layout_marginRight="@dimen/selectorPadding"
+                    android:layout_marginLeft="@dimen/selectorPadding"
+                    android:layout_marginTop="6dp"/>
+
+            </LinearLayout>
+
+            <!-- Section -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="start"
+                android:paddingLeft="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mediumFont"
+                    android:text="Status"
+                    android:textColor="@color/white" />
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6dp"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+            <!-- Section Content -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/mainPadding"
+                android:layout_marginBottom="@dimen/selectorPadding"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!-- Row (Max 4) -->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.25"
+                    android:weightSum="1"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="14dp"
+                    android:background="@drawable/shadow">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.9"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/eco"
+                            android:scaleType="fitCenter"
+                            android:layout_weight="0.2"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="220km"
+                            android:textSize="@dimen/smallFont"
+                            android:layout_weight="0.7"/>
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:progressDrawable="@drawable/mainbarstyle"
+                        android:progress="20"
+                        android:max="100"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.25"
+                    android:weightSum="1"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="14dp"
+                    android:background="@drawable/shadow">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.9"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/eco"
+                            android:scaleType="fitCenter"
+                            android:layout_weight="0.2"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="220km"
+                            android:textSize="@dimen/smallFont"
+                            android:layout_weight="0.7"/>
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:progressDrawable="@drawable/mainbarstyle"
+                        android:progress="20"
+                        android:max="100"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.25"
+                    android:weightSum="1"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="14dp"
+                    android:background="@drawable/shadow">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.9"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/eco"
+                            android:scaleType="fitCenter"
+                            android:layout_weight="0.2"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="220km"
+                            android:textSize="@dimen/smallFont"
+                            android:layout_weight="0.7"/>
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:progressDrawable="@drawable/mainbarstyle"
+                        android:progress="20"
+                        android:max="100"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.25"
+                    android:weightSum="1"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="14dp"
+                    android:background="@drawable/shadow">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.9"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/eco"
+                            android:scaleType="fitCenter"
+                            android:layout_weight="0.2"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="220km"
+                            android:textSize="@dimen/smallFont"
+                            android:layout_weight="0.7"/>
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:progressDrawable="@drawable/mainbarstyle"
+                        android:progress="20"
+                        android:max="100"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Section -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="start"
+                android:paddingLeft="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mediumFont"
+                    android:text="Maintenance"
+                    android:textColor="@color/white" />
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6dp"
+                    android:background="@color/white" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -3,8 +3,10 @@
 
     /* General */
 
-    <color name="black">#FF000000</color>
-    <color name="white">#FFeeeeee</color>
+    <color name="black">#000000</color>
+    <color name="white">#eeeeee</color>
+    <color name="softwhite">#D6D6D6</color>
+    <color name="grey">#B5B5B5</color>
 
     /* Main */
 
@@ -14,7 +16,10 @@
     <color name="fourthColor">#211F22</color>
     <color name="fifthColor">#3B383C</color>
 
-    /*  */
+    /* Others */
 
+    <color name="greenStatus">#689F38</color>
+    <color name="yellowStatus">#FBC02D</color>
+    <color name="blueSelector">#3a47ff</color>
 
 </resources>
