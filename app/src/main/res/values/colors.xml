@@ -20,6 +20,7 @@
 
     <color name="greenStatus">#689F38</color>
     <color name="yellowStatus">#FBC02D</color>
+    <color name="redStatus">#D32F2F</color>
     <color name="blueSelector">#3a47ff</color>
 
 </resources>
