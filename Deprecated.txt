@@ -1,0 +1,62 @@
+            <!-- Maintenance Content -->
+
+
+                    <!--
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/shadow">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/wheel"/>
+
+                    </LinearLayout>
+-->
+                    <!--
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:orientation="vertical"
+                        android:weightSum="1"
+                        android:background="@drawable/shadow">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/wheel"/>
+
+                        <View
+                            android:layout_width="@dimen/statusize"
+                            android:layout_height="@dimen/statusize"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/greenstatus"/>
+
+                    </FrameLayout>
+
+-->
+
+                    <!--
+
+                    <AbsoluteLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/wheel"/>
+
+                        <View
+                            android:layout_width="@dimen/statusize"
+                            android:layout_height="@dimen/statusize"
+                            android:layout_x="2dp"
+                            android:layout_y="2dp"
+                            android:background="@drawable/greenstatus"/>
+
+                    </AbsoluteLayout>
+
+                    -->

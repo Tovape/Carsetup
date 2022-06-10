@@ -1,11 +1,16 @@
 package com.example.carsetup;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.NonNull;
@@ -26,7 +31,8 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*  Fixing Perms for Connection
+    // SQL Config
+    /*
     CREATE USER 'test2'@'%' IDENTIFIED BY '123';
     FLUSH PRIVILEGES;
     Blob texts
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     */
 
     // Variables
+    Context context = this;
     private ActivityMainBinding binding;
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -47,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
         // Connect Database
         ConnectMySql connectMySql = new ConnectMySql();
         connectMySql.execute("");
+
+        // Design
+        /* Absolute Positioning
+        FrameLayout root = (FrameLayout)findViewById(R.id.test);
+        View img = new View(this);
+        img.setBackground(ContextCompat.getDrawable(context, R.drawable.greenstatus));
+
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(20, 20);
+        params.leftMargin = 20;
+        params.topMargin  = 20;
+        root.addView(img, params);
+        */
 
         // Drawer
         /*
@@ -88,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /* Drawer Function
+    // Drawer Function
+    /*
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
