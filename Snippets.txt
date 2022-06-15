@@ -1,0 +1,63 @@
+
+    // SQL Config
+    /*
+    CREATE USER 'test2'@'%' IDENTIFIED BY '123';
+    FLUSH PRIVILEGES;
+    Blob texts
+    Toast.makeText(MainActivity.this, "Database Connection success", Toast.LENGTH_SHORT).show();
+    */
+
+
+        // Design
+        /* Absolute Positioning
+        FrameLayout root = (FrameLayout)findViewById(R.id.test);
+        View img = new View(this);
+        img.setBackground(ContextCompat.getDrawable(context, R.drawable.greenstatus));
+
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(20, 20);
+        params.leftMargin = 20;
+        params.topMargin  = 20;
+        root.addView(img, params);
+        */
+
+        // Drawer
+        /*
+        drawerLayout = findViewById(R.id.container);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
+
+        // pass the Open and Close toggle for the drawer layout listener
+        // to toggle the button
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        // to make the Navigation drawer icon always appear on the action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        */
+
+        // Set Backgrounds In Fragment
+        /*
+        Fragment fragment = this.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_activity_main);
+        fragment.getView().setBackgroundColor(Color.RED);
+        */
+
+        // Set StatusBar Color - Just use Themes.xml
+        /*
+        Window window = MainActivity.this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.mainColor));
+        */
+
+
+
+    // Drawer Function
+    /*
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    */

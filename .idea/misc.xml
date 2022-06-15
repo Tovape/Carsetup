@@ -8,7 +8,9 @@
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Applicationtest/app/src/main/res/layout/fragment_notifications.xml" value="0.37395833333333334" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Applicationtest/app/src/main/res/layout/fragment_tasks.xml" value="0.37395833333333334" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Applicationtest/app/src/main/res/menu/bottom_nav_menu.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/bottomline.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/carphoto.xml" value="0.40572916666666664" />
+        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/circle.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/greenstatus.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/mainbarstyle.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/redstatus.xml" value="0.40572916666666664" />
@@ -19,8 +21,10 @@
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/unselected.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/drawable/yellowstatus.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/fragment_home.xml" value="0.3498233215547703" />
-        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/fragment_settings.xml" value="0.38958333333333334" />
+        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/fragment_notifications.xml" value="0.35555555555555557" />
+        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/fragment_settings.xml" value="0.5" />
+        <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/layout/notification_row.xml" value="0.38958333333333334" />
         <entry key="..\:/Users/toniv/AndroidStudioProjects/Carsetup/app/src/main/res/menu/drawer_menu.xml" value="0.38958333333333334" />
       </map>
     </option>
