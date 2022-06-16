@@ -46,7 +46,8 @@
                 android:id="@+id/notification_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/mainPadding"
+                android:paddingTop="@dimen/mainPadding"
+                android:paddingBottom="@dimen/mainPadding"
                 android:scrollbars="vertical"/>
 
         </LinearLayout>

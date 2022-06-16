@@ -2,6 +2,7 @@ package com.example.carsetup;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
+    static public Resources.Theme theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +52,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Bottom Navigator
         BottomNavigator();
+
+        // Get Theme
+        theme = super.getTheme();
+    }
+
+    public MainActivity() {}
+
+    // Theme Activators
+    static public void darkTheme() {
+        theme.applyStyle(R.style.Theme_Dark, true);
+    }
+
+    static public void lightTheme() {
+        theme.applyStyle(R.style.Theme_Light, true);
     }
 
     // Functions
-
     private class ConnectMySql extends AsyncTask<String, Void, String> {
         String checkconnection = "0";
         @Override

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Attributes -->
+    <attr name="black" format="reference" />
+    <attr name="white" format="reference" />
+    <attr name="softwhite" format="reference" />
+    <attr name="grey" format="reference" />
+
+    <attr name="mainColor" format="reference" />
+    <attr name="secondColor" format="reference" />
+    <attr name="thirdColor" format="reference" />
+    <attr name="fourthColor" format="reference" />
+    <attr name="fifthColor" format="reference" />
+
+</resources>

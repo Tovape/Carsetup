@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.Carsetup" parent="Theme.AppCompat.Light.NoActionBar">
+
+    <!-- Dark Theme -->
+    <style name="Theme_Dark" parent="Theme.AppCompat.NoActionBar">
+        <!-- General -->
         <item name="colorPrimary">@color/secondColor</item>
         <item name="colorPrimaryDark">@color/secondColor</item>
         <item name="colorAccent">@color/secondColor</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/secondColor</item>
+        <!-- Extra -->
+        <item name="black">@color/black</item>
     </style>
+
+    <!-- Light Theme -->
+    <style name="Theme_Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- General -->
+        <item name="colorPrimary">@color/secondColor</item>
+        <item name="colorPrimaryDark">@color/secondColor</item>
+        <item name="colorAccent">@color/secondColor</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/secondColor</item>
+        <!-- Extra -->
+        <item name="black">@color/white</item>
+    </style>
+
 </resources>
+
+
+<!--
+<style name="darktheme" parent="Theme.AppCompat">
+
+
+<item name="white">#eeeeee</item>
+<item name="softwhite">#D6D6D6</item>
+<item name="grey">#B5B5B5</item>
+
+<item name="mainColor">#D7BCDA</item>
+<item name="secondColor">#422844</item>
+<item name="thirdColor">#E3CAE5</item>
+<item name="fourthColor">#211F22</item>
+<item name="fifthColor">#3B383C</item>
+
+</style>
+
+<style name="lightheme" parent="Theme.AppCompat.Light">
+<item name="black">@color/white</item>
+
+<item name="white">#000000</item>
+<item name="softwhite">#D6D6D6</item>
+<item name="grey">#B5B5B5</item>
+
+<item name="mainColor">#D7BCDA</item>
+<item name="secondColor">#422844</item>
+<item name="thirdColor">#E3CAE5</item>
+<item name="fourthColor">#211F22</item>
+<item name="fifthColor">#3B383C</item>
+
+</style>
+-->
