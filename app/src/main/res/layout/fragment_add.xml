@@ -34,6 +34,70 @@
                 android:textColor="?attr/white"
                 android:textSize="@dimen/bigFont" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/mainPadding"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/mainPadding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/mediumFont"
+                    android:text="Manufacturer"/>
+
+                <EditText
+                    android:id="@+id/manufacturer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/mediumFont"
+                    android:textColor="@color/black"
+                    android:text="Seat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/mediumFont"
+                    android:text="Model"/>
+
+                <EditText
+                    android:id="@+id/model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/mediumFont"
+                    android:textColor="@color/black"
+                    android:text="Ibiza" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/mediumFont"
+                    android:text="Year"/>
+
+                <Button
+                    android:id="@+id/yearselector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Select"/>
+
+                <Button
+                    android:id="@+id/insertcar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Insert Car"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>

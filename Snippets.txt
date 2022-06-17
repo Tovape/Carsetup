@@ -61,3 +61,9 @@
         return super.onOptionsItemSelected(item);
     }
     */
+
+
+        // Set Real Buttons Background
+        //getWindow().setNavigationBarColor(ContextCompat.getColor(context, R.color.white));
+        // Set Bottom Nav Colors
+        //navView.setItemIconTintList(ContextCompat.getDrawable(context, R.drawable.));
