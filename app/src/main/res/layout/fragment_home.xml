@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background"
     tools:context=".ui.home.HomeFragment">
 
     <ScrollView
@@ -43,7 +44,7 @@
                         android:paddingEnd="4dp"
                         android:singleLine="true"
                         android:text="Volvo XC40"
-                        android:textColor="@color/white"
+                        android:textColor="?attr/white"
                         android:textSize="@dimen/bigFont" />
 
                     <LinearLayout
@@ -60,7 +61,7 @@
                             android:paddingStart="4dp"
                             android:paddingEnd="4dp"
                             android:textSize="@dimen/mediumFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="2018 - " />
 
                         <TextView
@@ -180,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/mediumFont"
                     android:text="Status"
-                    android:textColor="@color/white" />
+                    android:textColor="?attr/white" />
 
                 <View
                     android:layout_width="80dp"
@@ -188,7 +189,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="6dp"
                     android:layout_marginEnd="6dp"
-                    android:background="@color/white" />
+                    android:background="?attr/white" />
 
             </LinearLayout>
 
@@ -236,6 +237,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -266,10 +268,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -282,6 +284,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -312,10 +315,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -328,6 +331,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -358,10 +362,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -374,6 +378,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -415,10 +420,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -431,6 +436,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -461,10 +467,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -477,6 +483,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -507,10 +514,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -523,6 +530,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -553,10 +561,10 @@
 
                         <ImageView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/eco"
-                            android:layout_weight="0.2"/>
+                            android:src="@drawable/eco" />
 
                         <View
                             android:layout_width="0dp"
@@ -569,6 +577,7 @@
                             android:layout_gravity="center"
                             android:text="220km"
                             android:textSize="@dimen/smallFont"
+                            android:textColor="?attr/black"
                             android:layout_weight="0.7"/>
 
                     </LinearLayout>
@@ -599,7 +608,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/mediumFont"
                     android:text="Maintenance"
-                    android:textColor="@color/white" />
+                    android:textColor="?attr/white" />
 
                 <View
                     android:layout_width="80dp"
@@ -607,7 +616,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="6dp"
                     android:layout_marginEnd="6dp"
-                    android:background="@color/white" />
+                    android:background="?attr/white" />
 
             </LinearLayout>
 
@@ -660,7 +669,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/smallFont"
-                            android:textColor="@color/white"
+                            android:textColor="?attr/white"
                             android:text="Tires"/>
 
                         <TextView
@@ -669,7 +678,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="2 Years Remaining"/>
 
                         <TextView
@@ -678,7 +687,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="19 4x4 Michelin"/>
 
                     </LinearLayout>
@@ -722,7 +731,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/smallFont"
-                            android:textColor="@color/white"
+                            android:textColor="?attr/white"
                             android:text="Tires"/>
 
                         <TextView
@@ -731,7 +740,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="2 Years Remaining"/>
 
                         <TextView
@@ -740,7 +749,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="19 4x4 Michelin"/>
 
                     </LinearLayout>
@@ -784,7 +793,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/smallFont"
-                            android:textColor="@color/white"
+                            android:textColor="?attr/white"
                             android:text="Tires"/>
 
                         <TextView
@@ -793,7 +802,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="2 Years Remaining"/>
 
                         <TextView
@@ -802,7 +811,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="19 4x4 Michelin"/>
 
                     </LinearLayout>
@@ -846,7 +855,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/smallFont"
-                            android:textColor="@color/white"
+                            android:textColor="?attr/white"
                             android:text="Tires"/>
 
                         <TextView
@@ -855,7 +864,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="2 Years Remaining"/>
 
                         <TextView
@@ -864,7 +873,7 @@
                             android:paddingLeft="@dimen/microFont"
                             android:paddingRight="@dimen/microFont"
                             android:textSize="@dimen/microFont"
-                            android:textColor="@color/softwhite"
+                            android:textColor="?attr/softwhite"
                             android:text="19 4x4 Michelin"/>
 
                     </LinearLayout>
@@ -907,14 +916,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="12dp"
                         android:textSize="@dimen/smallFont"
-                        android:textColor="@color/white"
+                        android:textColor="?attr/white"
                         android:text="Engine"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:textSize="@dimen/microFont"
-                        android:textColor="@color/softwhite"
+                        android:textColor="?attr/softwhite"
                         android:text="B4. Petrol V6 (853)"/>
 
                     <View
@@ -926,7 +935,7 @@
                         android:layout_height="10dp"
                         android:layout_marginBottom="4dp"
                         android:textSize="@dimen/microFont"
-                        android:textColor="@color/softwhite"
+                        android:textColor="?attr/softwhite"
                         android:text="Engine Health"/>
 
                     <ProgressBar

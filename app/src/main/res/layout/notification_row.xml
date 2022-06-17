@@ -12,7 +12,7 @@
         android:id="@+id/circleView"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        android:background="@drawable/circle"/>
+        android:background="@drawable/circle" />
 
     <TextView
         android:id="@+id/titleTextView"
@@ -20,6 +20,7 @@
         android:layout_height="23dp"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/circleView"
+        android:textColor="@color/black"
         android:paddingStart="16dp" />
 
     <TextView
@@ -28,6 +29,7 @@
         android:layout_height="23dp"
         android:layout_below="@+id/titleTextView"
         android:layout_alignStart="@+id/titleTextView"
+        android:textColor="@color/softblack"
         android:paddingStart="16dp" />
 
 </RelativeLayout>

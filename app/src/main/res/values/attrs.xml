@@ -2,8 +2,10 @@
 <resources>
 
     <!-- Attributes -->
+    <attr name="background" format="reference" />
     <attr name="black" format="reference" />
     <attr name="white" format="reference" />
+    <attr name="softblack" format="reference" />
     <attr name="softwhite" format="reference" />
     <attr name="grey" format="reference" />
 

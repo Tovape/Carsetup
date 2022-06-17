@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:background="?attr/background"
+    tools:context=".ui.notifications.NotificationsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +31,7 @@
             android:paddingEnd="4dp"
             android:singleLine="true"
             android:text="Notifications"
-            android:textColor="@color/white"
+            android:textColor="?attr/white"
             android:textSize="@dimen/bigFont" />
 
         <!-- List -->

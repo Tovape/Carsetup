@@ -35,15 +35,15 @@ public class SettingsFragment extends Fragment {
     @SuppressLint("ClickableViewAccessibility")
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
-
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // Get Ids
+        SwitchCompat themeswitch = root.findViewById(R.id.themeswitch);
 
         // Theme Listener
         Resources.Theme theme;
         MainActivity mainActivity = new MainActivity();
-        SwitchCompat themeswitch = root.findViewById(R.id.themeswitch);
         themeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -52,10 +52,14 @@ public class SettingsFragment extends Fragment {
                     // Dark Theme
                     Log.d("LOGCAT", "Dark Theme On");
                     mainActivity.darkTheme();
+                    themeswitch.setText("Dark Theme");
+                    //mainActivity.refreshFragments();
                 } else if (isChecked == false) {
                     // Light Theme
                     Log.d("LOGCAT", "Light Theme On");
                     mainActivity.lightTheme();
+                    themeswitch.setText("Light Theme");
+                    //mainActivity.refreshFragments();
                 }
             }
         });

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/black"
-    tools:context=".ui.home.HomeFragment">
+    android:background="?attr/background"
+    tools:context=".ui.settings.SettingsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 android:paddingEnd="4dp"
                 android:singleLine="true"
                 android:text="Settings"
-                android:textColor="@color/white"
+                android:textColor="?attr/white"
                 android:textSize="@dimen/bigFont" />
 
             <!-- Each -->
@@ -52,7 +52,9 @@
                         android:id="@+id/themeswitch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Theme"
+                        android:text="Dark Theme"
+                        android:textColor="@color/black"
+                        android:checked="true"
                         android:padding="@dimen/mainPadding"
                         android:background="@drawable/bottomline"/>
 
@@ -67,6 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Notifications"
+                        android:textColor="@color/black"
                         android:padding="@dimen/mainPadding"
                         android:background="@drawable/bottomline"/>
 
@@ -81,6 +84,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Other"
+                        android:textColor="@color/black"
                         android:padding="@dimen/mainPadding"/>
 
                 </LinearLayout>

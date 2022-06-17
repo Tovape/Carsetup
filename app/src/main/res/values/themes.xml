@@ -9,7 +9,18 @@
         <item name="colorAccent">@color/secondColor</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/secondColor</item>
         <!-- Extra -->
+        <item name="background">@color/fifthColor</item>
         <item name="black">@color/black</item>
+        <item name="white">@color/white</item>
+        <item name="softwhite">@color/softwhite</item>
+        <item name="softblack">@color/softblack</item>
+        <item name="grey">@color/grey</item>
+
+        <item name="mainColor">@color/mainColor</item>
+        <item name="secondColor">@color/secondColor</item>
+        <item name="thirdColor">@color/thirdColor</item>
+        <item name="fourthColor">@color/fourthColor</item>
+        <item name="fifthColor">@color/fifthColor</item>
     </style>
 
     <!-- Light Theme -->
@@ -20,40 +31,17 @@
         <item name="colorAccent">@color/secondColor</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/secondColor</item>
         <!-- Extra -->
+        <item name="background">@color/softwhite</item>
         <item name="black">@color/white</item>
+        <item name="white">@color/black</item>
+        <item name="softwhite">@color/softblack</item>
+        <item name="softblack">@color/softwhite</item>
+        <item name="grey">@color/grey</item>
+
+        <item name="mainColor">@color/mainColor</item>
+        <item name="secondColor">@color/secondColor</item>
+        <item name="thirdColor">@color/thirdColor</item>
+        <item name="fourthColor">@color/softwhite</item>
+        <item name="fifthColor">@color/fifthColor</item>
     </style>
-
 </resources>
-
-
-<!--
-<style name="darktheme" parent="Theme.AppCompat">
-
-
-<item name="white">#eeeeee</item>
-<item name="softwhite">#D6D6D6</item>
-<item name="grey">#B5B5B5</item>
-
-<item name="mainColor">#D7BCDA</item>
-<item name="secondColor">#422844</item>
-<item name="thirdColor">#E3CAE5</item>
-<item name="fourthColor">#211F22</item>
-<item name="fifthColor">#3B383C</item>
-
-</style>
-
-<style name="lightheme" parent="Theme.AppCompat.Light">
-<item name="black">@color/white</item>
-
-<item name="white">#000000</item>
-<item name="softwhite">#D6D6D6</item>
-<item name="grey">#B5B5B5</item>
-
-<item name="mainColor">#D7BCDA</item>
-<item name="secondColor">#422844</item>
-<item name="thirdColor">#E3CAE5</item>
-<item name="fourthColor">#211F22</item>
-<item name="fifthColor">#3B383C</item>
-
-</style>
--->

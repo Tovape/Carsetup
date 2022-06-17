@@ -25,8 +25,6 @@ public class Notifications_ViewHolder extends RecyclerView.ViewHolder implements
     public void bindRow(@NonNull Notifications color) {
         titleTextView.setText(color.getTitle());
         subtitleTextView.setText(color.getSubtitle());
-        GradientDrawable gradientDrawable = (GradientDrawable) circleView.getBackground();
-        gradientDrawable.setColor(Integer.parseInt("-1"));
     }
 
     @Override
