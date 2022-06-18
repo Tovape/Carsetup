@@ -2,7 +2,6 @@ package com.example.carsetup.ui.notifications;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +13,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.carsetup.Notifications;
-import com.example.carsetup.Notifications_Adapter;
 import com.example.carsetup.R;
-import com.example.carsetup.RecyclerViewOnItemClickListener;
 import com.example.carsetup.databinding.FragmentNotificationsBinding;
+import com.example.carsetup.RecyclerViewOnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,9 +58,9 @@ public class NotificationsFragment extends Fragment {
         RecyclerView recyclerView = root.findViewById(R.id.notification_list);
 
         // Setting Up List
-        final List<Notifications> notification_each = getNotifications();
+        final List<NotificationsArray> notification_each = getNotifications();
 
-        recyclerView.setAdapter(new Notifications_Adapter(notification_each, new RecyclerViewOnItemClickListener() {
+        recyclerView.setAdapter(new NotificationsAdapter(notification_each, new RecyclerViewOnItemClickListener() {
             @Override
             public void onClick(View v, int position) {
                 String text = position + " " + notification_each.get(position).getTitle();
@@ -83,11 +80,11 @@ public class NotificationsFragment extends Fragment {
     }
 
     @SuppressWarnings("ResourceType")
-    private List<Notifications> getNotifications() {
-        List<Notifications> notification_each = new ArrayList<>();
-        notification_each.add(new Notifications(1,"Title", "Subtitle"));
-        notification_each.add(new Notifications(2,"Hello", "You've even"));
-        notification_each.add(new Notifications(3,"Alan", "In the end"));
+    private List<NotificationsArray> getNotifications() {
+        List<NotificationsArray> notification_each = new ArrayList<>();
+        notification_each.add(new NotificationsArray(1,"Title", "Subtitle"));
+        notification_each.add(new NotificationsArray(2,"Hello", "You've even"));
+        notification_each.add(new NotificationsArray(3,"Alan", "In the end"));
         return notification_each;
     }
 

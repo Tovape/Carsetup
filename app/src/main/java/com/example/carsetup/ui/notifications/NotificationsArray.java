@@ -1,6 +1,6 @@
-package com.example.carsetup;
+package com.example.carsetup.ui.notifications;
 
-public class Notifications {
+public class NotificationsArray {
 
     // Variables
 
@@ -10,7 +10,7 @@ public class Notifications {
 
     // Constructor
 
-    public Notifications(int type, String title, String subtitle) {
+    public NotificationsArray(int type, String title, String subtitle) {
         this.type = type;
         this.title = title;
         this.subtitle = subtitle;

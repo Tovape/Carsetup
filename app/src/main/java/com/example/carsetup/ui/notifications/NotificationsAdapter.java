@@ -1,4 +1,4 @@
-package com.example.carsetup;
+package com.example.carsetup.ui.notifications;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,15 +6,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.carsetup.R;
+import com.example.carsetup.RecyclerViewOnItemClickListener;
+
 import java.util.List;
 
-public class Notifications_Adapter extends RecyclerView.Adapter<Notifications_ViewHolder> {
+public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsViewHolder> {
 
-    private final List<Notifications> data;
+    private final List<NotificationsArray> data;
     private final RecyclerViewOnItemClickListener recyclerViewOnItemClickListener;
 
-    public Notifications_Adapter(@NonNull List<Notifications> data,
-                                  @NonNull RecyclerViewOnItemClickListener
+    public NotificationsAdapter(@NonNull List<NotificationsArray> data,
+                                @NonNull RecyclerViewOnItemClickListener
                                           recyclerViewOnItemClickListener) {
         this.data = data;
         this.recyclerViewOnItemClickListener = recyclerViewOnItemClickListener;
@@ -22,13 +25,13 @@ public class Notifications_Adapter extends RecyclerView.Adapter<Notifications_Vi
 
     @Override
     @NonNull
-    public Notifications_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NotificationsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View row = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_row, parent, false);
-        return new Notifications_ViewHolder(row, recyclerViewOnItemClickListener);
+        return new NotificationsViewHolder(row, recyclerViewOnItemClickListener);
     }
 
     @Override
-    public void onBindViewHolder(Notifications_ViewHolder holder, int position) {
+    public void onBindViewHolder(NotificationsViewHolder holder, int position) {
         holder.bindRow(data.get(position));
     }
 

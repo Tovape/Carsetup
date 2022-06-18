@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background"
+    tools:context=".ui.add.Carsearch">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/mainPadding"
+            android:layout_marginLeft="@dimen/mainPadding"
+            android:layout_marginTop="@dimen/mainPadding"
+            android:orientation="vertical">
+
+            <!-- Top Bar -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="left"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:singleLine="true"
+                android:text="Results"
+                android:textColor="?attr/white"
+                android:textSize="@dimen/bigFont" />
+
+                <!-- List -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shadow"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/mainPadding">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/car_results"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/mainPadding"
+                        android:paddingBottom="@dimen/mainPadding"
+                        android:scrollbars="vertical"/>
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

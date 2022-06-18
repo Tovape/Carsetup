@@ -1,19 +1,21 @@
-package com.example.carsetup;
+package com.example.carsetup.ui.notifications;
 
-import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Notifications_ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+import com.example.carsetup.R;
+import com.example.carsetup.RecyclerViewOnItemClickListener;
+
+public class NotificationsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     private final View circleView;
     private final TextView titleTextView;
     private final TextView subtitleTextView;
     private final RecyclerViewOnItemClickListener listener;
 
-    public Notifications_ViewHolder(@NonNull View itemView, @NonNull RecyclerViewOnItemClickListener listener) {
+    public NotificationsViewHolder(@NonNull View itemView, @NonNull RecyclerViewOnItemClickListener listener) {
         super(itemView);
         circleView = itemView.findViewById(R.id.circleView);
         titleTextView = itemView.findViewById(R.id.titleTextView);
@@ -22,7 +24,7 @@ public class Notifications_ViewHolder extends RecyclerView.ViewHolder implements
         itemView.setOnClickListener(this);
     }
 
-    public void bindRow(@NonNull Notifications color) {
+    public void bindRow(@NonNull NotificationsArray color) {
         titleTextView.setText(color.getTitle());
         subtitleTextView.setText(color.getSubtitle());
     }

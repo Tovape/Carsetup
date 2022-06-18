@@ -13,11 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme_Dark">
         <activity
-            android:name="com.example.carsetup.MainActivity"
+            android:name=".ui.add.Carsearch"
+            android:exported="false" />
+        <activity
+            android:name=".CarSearch"
+            android:exported="false"
+            android:label="@string/title_activity_car_search"
+            android:theme="@style/Theme_Dark.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

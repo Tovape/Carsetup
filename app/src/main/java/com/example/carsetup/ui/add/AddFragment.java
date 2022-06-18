@@ -1,7 +1,7 @@
 package com.example.carsetup.ui.add;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -12,28 +12,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.carsetup.R;
 import com.example.carsetup.databinding.FragmentAddBinding;
 import com.whiteelephant.monthpicker.MonthPickerDialog;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddFragment extends Fragment {
 
+    // Global Variables
     Context context;
     private AddViewModel addViewModel;
     private FragmentAddBinding binding;
@@ -41,7 +38,10 @@ public class AddFragment extends Fragment {
     EditText model;
     Button year;
     Button insertcar;
+    Button searchcar;
     int yearselected = 2000;
+    List<CarsearchArray> carsearcheach = new ArrayList<>();
+    ArrayList<String> carsearchdata = new ArrayList<String>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         addViewModel = new ViewModelProvider(this).get(AddViewModel.class);
@@ -54,6 +54,7 @@ public class AddFragment extends Fragment {
         model = root.findViewById(R.id.model);
         year = root.findViewById(R.id.yearselector);
         insertcar = root.findViewById(R.id.insertcar);
+        searchcar = root.findViewById(R.id.searchcar);
 
         // Check Connection Database
         ConnectMySql connectMySql = new ConnectMySql();
@@ -74,6 +75,23 @@ public class AddFragment extends Fragment {
                 String query = "INSERT INTO cars VALUES (null, '" + manufacturer.getText() + "', '" +  model.getText() + "', '" + yearselected + "')";
                 InsertCar insertcar = new InsertCar(query);
                 insertcar.execute("");
+            }
+        });
+
+        // Search Car
+        searchcar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String query = "SELECT make, model, year_from FROM car_db WHERE make LIKE UPPER('%" + manufacturer.getText() + "%') AND model LIKE UPPER('%" + model.getText() + "%') ORDER BY year_from LIMIT 10";
+                carsearcheach.removeAll(carsearcheach);
+                carsearchdata.removeAll(carsearchdata);
+                SearchCar searchcar = new SearchCar(query);
+                searchcar.execute("");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                SearchCarList();
             }
         });
 
@@ -148,6 +166,43 @@ public class AddFragment extends Fragment {
         }
     }
 
+    private class SearchCar extends AsyncTask<String, Void, String> {
+
+        private final String query;
+
+        public SearchCar(String query) {
+            this.query = query;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carbotdb", "test2", "123");
+                Statement st = con.createStatement();
+                ResultSet result = st.executeQuery(query);
+                //Log.d("LOGCAT", "Car Search:");
+                while (result.next()){
+                    //Log.d("LOGCAT", "Manufacturer: " + result.getString(1) + " | Model: " + result.getString(2) + " | Year: " + result.getString(3));
+                    carsearcheach.add(new CarsearchArray(Integer.parseInt(result.getString(3)),result.getString(1), result.getString(2)));
+                }
+                for (int i = 0; i < carsearcheach.size(); i++) {
+                    carsearchdata.add(new String(carsearcheach.get(i).toString()));
+                    Log.d("LOGCAT", "List       Each: " + carsearcheach.get(i).toString());
+                    Log.d("LOGCAT", "ArrayList  Each: " + carsearchdata.get(i));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     private int setNormalPicker(int activeyear) {
         final Calendar today = Calendar.getInstance();
@@ -183,6 +238,12 @@ public class AddFragment extends Fragment {
                     .show();
 
         return yearselected;
+    }
+
+    public void SearchCarList() {
+        Intent carsearchIntent = new Intent(context, Carsearch.class);
+        carsearchIntent.putStringArrayListExtra("cararray", (ArrayList<String>) carsearchdata);
+        startActivity(carsearchIntent);
     }
 
     @Override
