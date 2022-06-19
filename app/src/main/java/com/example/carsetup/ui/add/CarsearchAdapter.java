@@ -1,5 +1,6 @@
 package com.example.carsetup.ui.add;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,12 @@ public class CarsearchAdapter extends RecyclerView.Adapter<CarsearchViewHolder> 
 
     private final ArrayList<String> data;
     private final RecyclerViewOnItemClickListener recyclerViewOnItemClickListener;
+    private Activity activity;
 
-    public CarsearchAdapter(@NonNull ArrayList<String> data,
+    public CarsearchAdapter(Activity activity, @NonNull ArrayList<String> data,
                             @NonNull RecyclerViewOnItemClickListener
-                                          recyclerViewOnItemClickListener) {
+                                    recyclerViewOnItemClickListener) {
+        this.activity = activity;
         this.data = data;
         this.recyclerViewOnItemClickListener = recyclerViewOnItemClickListener;
     }
@@ -26,7 +29,7 @@ public class CarsearchAdapter extends RecyclerView.Adapter<CarsearchViewHolder> 
     @NonNull
     public CarsearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View row = LayoutInflater.from(parent.getContext()).inflate(R.layout.carsearch_row, parent, false);
-        return new CarsearchViewHolder(row, recyclerViewOnItemClickListener);
+        return new CarsearchViewHolder(activity, row, recyclerViewOnItemClickListener);
     }
 
     @Override

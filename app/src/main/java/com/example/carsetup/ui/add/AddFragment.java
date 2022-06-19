@@ -1,5 +1,6 @@
 package com.example.carsetup.ui.add;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -81,7 +82,12 @@ public class AddFragment extends Fragment {
         // Search Car
         searchcar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String query = "SELECT make, model, year_from FROM car_db WHERE make LIKE UPPER('%" + manufacturer.getText() + "%') AND model LIKE UPPER('%" + model.getText() + "%') ORDER BY year_from LIMIT 10";
+                // Cannot be null or empty
+                String query = "SELECT make, model, year_from, body_type FROM car_db WHERE make LIKE UPPER('%" + manufacturer.getText() + "%') " +
+                                "AND model LIKE UPPER('%" + model.getText() + "%') AND make IS NOT NULL AND make <> ''" +
+                                " AND model IS NOT NULL AND model <> '' AND year_from IS NOT NULL AND year_from <> '' AND " +
+                                "body_type IS NOT NULL AND body_type <> '' ORDER BY year_from LIMIT 10";
+                Log.d("LOGCAT", "Query:" + query);
                 carsearcheach.removeAll(carsearcheach);
                 carsearchdata.removeAll(carsearchdata);
                 SearchCar searchcar = new SearchCar(query);
@@ -189,7 +195,7 @@ public class AddFragment extends Fragment {
                 //Log.d("LOGCAT", "Car Search:");
                 while (result.next()){
                     //Log.d("LOGCAT", "Manufacturer: " + result.getString(1) + " | Model: " + result.getString(2) + " | Year: " + result.getString(3));
-                    carsearcheach.add(new CarsearchArray(Integer.parseInt(result.getString(3)),result.getString(1), result.getString(2)));
+                    carsearcheach.add(new CarsearchArray(Integer.parseInt(result.getString(3)),result.getString(1), result.getString(2), result.getString(4)));
                 }
                 for (int i = 0; i < carsearcheach.size(); i++) {
                     carsearchdata.add(new String(carsearcheach.get(i).toString()));
@@ -243,7 +249,23 @@ public class AddFragment extends Fragment {
     public void SearchCarList() {
         Intent carsearchIntent = new Intent(context, Carsearch.class);
         carsearchIntent.putStringArrayListExtra("cararray", (ArrayList<String>) carsearchdata);
-        startActivity(carsearchIntent);
+        startActivityForResult(carsearchIntent, 1);
+    }
+
+    // Get Car Selected from Car List
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String position = data.getStringExtra("position");
+                Log.d("LOGCAT", "Position: " + position);
+                Log.d("LOGCAT", "Car: " + carsearchdata.get(Integer.parseInt(position)));
+                // Basically add the car to a new user table database
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                Log.d("LOGCAT", "No Car Selected");
+            }
+        }
     }
 
     @Override

@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.carsetup.R;
 import com.example.carsetup.RecyclerViewOnItemClickListener;
@@ -21,6 +23,7 @@ public class Carsearch extends AppCompatActivity {
 
     // Variables
     Context context = this;
+    Activity activity = this;
     private CarsearchViewModel carsearchViewModel;
 
     @Override
@@ -39,12 +42,24 @@ public class Carsearch extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.car_results);
 
         carsearchViewModel = new ViewModelProvider(this).get(CarsearchViewModel.class);
-        recyclerView.setAdapter(new CarsearchAdapter(carsearchdata, new RecyclerViewOnItemClickListener() {
+        recyclerView.setAdapter(new CarsearchAdapter(activity,carsearchdata, new RecyclerViewOnItemClickListener() {
             @Override
             public void onClick(View v, int position) {
                 String text = position + " " + carsearchdata.get(position).toString();
             }
         }));
+
+        // Go Back
+        /*
+        Button goBack = findViewById(R.id.goback);
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        */
 
         // Vertical
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
