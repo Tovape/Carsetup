@@ -5,6 +5,8 @@
     FLUSH PRIVILEGES;
     Blob texts
     Toast.makeText(MainActivity.this, "Database Connection success", Toast.LENGTH_SHORT).show();
+	
+	There's no VARRAY in Mysql, so we are using the car's id in a JSON 
     */
 
 

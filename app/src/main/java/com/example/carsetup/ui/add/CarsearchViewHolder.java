@@ -35,36 +35,36 @@ public class CarsearchViewHolder extends RecyclerView.ViewHolder implements View
 
     public void bindRow(@NonNull String stringdata) {
         String[] splited = stringdata.split("\\s+");
-        lineTextview.setText(splited[0] + " " + splited[1] + " " + splited[2]);
-        if (splited[3].equals("Cabriolet")) {
+        lineTextview.setText(splited[1] + " " + splited[2] + " " + splited[3]);
+        if (splited[4].equals("Cabriolet")) {
             cartypeimage.setBackgroundResource(R.drawable.cabriolet);
-        } else if (splited[3].equals("Coupe")) {
+        } else if (splited[4].equals("Coupe")) {
             cartypeimage.setBackgroundResource(R.drawable.coupe);
-        } else if (splited[3].equals("Roadster")) {
+        } else if (splited[4].equals("Roadster")) {
             cartypeimage.setBackgroundResource(R.drawable.roadster);
-        } else if (splited[3].equals("Sedan")) {
+        } else if (splited[4].equals("Sedan")) {
             cartypeimage.setBackgroundResource(R.drawable.sedan);
-        } else if (splited[3].equals("Crossover")) {
+        } else if (splited[4].equals("Crossover")) {
             cartypeimage.setBackgroundResource(R.drawable.crossover);
-        } else if (splited[3].equals("Hatchback")) {
+        } else if (splited[4].equals("Hatchback")) {
             cartypeimage.setBackgroundResource(R.drawable.hatchback);
-        } else if (splited[3].equals("Hatchback 3 doors")) {
+        } else if (splited[4].equals("Hatchback 3 doors")) {
             cartypeimage.setBackgroundResource(R.drawable.hatchback);
-        } else if (splited[3].equals("Liftback")) {
+        } else if (splited[4].equals("Liftback")) {
             cartypeimage.setBackgroundResource(R.drawable.liftback);
-        } else if (splited[3].equals("Wagon")) {
+        } else if (splited[4].equals("Wagon")) {
             cartypeimage.setBackgroundResource(R.drawable.wagon);
-        } else if (splited[3].equals("Minivan")) {
+        } else if (splited[4].equals("Minivan")) {
             cartypeimage.setBackgroundResource(R.drawable.minivan);
-        } else if (splited[3].equals("Fastback")) {
+        } else if (splited[4].equals("Fastback")) {
             cartypeimage.setBackgroundResource(R.drawable.fastback);
-        } else if (splited[3].equals("Pickup")) {
+        } else if (splited[4].equals("Pickup")) {
             cartypeimage.setBackgroundResource(R.drawable.pickup);
-        } else if (splited[3].equals("Targa")) {
+        } else if (splited[4].equals("Targa")) {
             cartypeimage.setBackgroundResource(R.drawable.targa);
-        } else if (splited[3].equals("hardtop")) {
+        } else if (splited[4].equals("hardtop")) {
             cartypeimage.setBackgroundResource(R.drawable.hardtop);
-        } else if (splited[3].equals("Limousine")) {
+        } else if (splited[4].equals("Limousine")) {
             cartypeimage.setBackgroundResource(R.drawable.limousine);
         }
     }

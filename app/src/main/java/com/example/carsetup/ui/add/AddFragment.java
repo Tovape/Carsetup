@@ -83,11 +83,11 @@ public class AddFragment extends Fragment {
         searchcar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Cannot be null or empty
-                String query = "SELECT make, model, year_from, body_type FROM car_db WHERE make LIKE UPPER('%" + manufacturer.getText() + "%') " +
+                String query = "SELECT id, make, model, year_from, body_type FROM car_db WHERE make LIKE UPPER('%" + manufacturer.getText() + "%') " +
                                 "AND model LIKE UPPER('%" + model.getText() + "%') AND make IS NOT NULL AND make <> ''" +
                                 " AND model IS NOT NULL AND model <> '' AND year_from IS NOT NULL AND year_from <> '' AND " +
                                 "body_type IS NOT NULL AND body_type <> '' ORDER BY year_from LIMIT 10";
-                Log.d("LOGCAT", "Query:" + query);
+                Log.d("LOGCAT", "Query: " + query);
                 carsearcheach.removeAll(carsearcheach);
                 carsearchdata.removeAll(carsearchdata);
                 SearchCar searchcar = new SearchCar(query);
@@ -194,8 +194,7 @@ public class AddFragment extends Fragment {
                 ResultSet result = st.executeQuery(query);
                 //Log.d("LOGCAT", "Car Search:");
                 while (result.next()){
-                    //Log.d("LOGCAT", "Manufacturer: " + result.getString(1) + " | Model: " + result.getString(2) + " | Year: " + result.getString(3));
-                    carsearcheach.add(new CarsearchArray(Integer.parseInt(result.getString(3)),result.getString(1), result.getString(2), result.getString(4)));
+                    carsearcheach.add(new CarsearchArray(Integer.parseInt(result.getString(1)),result.getString(2),result.getString(3),Integer.parseInt(result.getString(4)),result.getString(5)));
                 }
                 for (int i = 0; i < carsearcheach.size(); i++) {
                     carsearchdata.add(new String(carsearcheach.get(i).toString()));
@@ -205,6 +204,47 @@ public class AddFragment extends Fragment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            return null;
+        }
+    }
+
+    private class CarBinder extends AsyncTask<String, Void, String> {
+
+        private final int status = 0;
+        private int car_id;
+        private int user_id;
+
+        public CarBinder(int user_id, int car_id) {
+            this.user_id = user_id;
+            this.car_id = car_id;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+            Log.d("LOGCAT", String.valueOf(user_id) + String.valueOf(car_id));
+            /*
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Statement st = con.createStatement();
+                int result = st.executeUpdate("");
+                if (result == 1) {
+                    Log.d("LOGCAT", "Car Inserted");
+                } else {
+                    Log.d("LOGCAT", "Error while inserting car");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            */
+
             return null;
         }
     }
@@ -261,7 +301,9 @@ public class AddFragment extends Fragment {
                 String position = data.getStringExtra("position");
                 Log.d("LOGCAT", "Position: " + position);
                 Log.d("LOGCAT", "Car: " + carsearchdata.get(Integer.parseInt(position)));
-                // Basically add the car to a new user table database
+                // Add Car into User Row
+                String[] splited = carsearchdata.get(Integer.parseInt(position)).split("\\s+");
+                CarBinder carbinder = new CarBinder(1, Integer.parseInt(splited[0]));
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 Log.d("LOGCAT", "No Car Selected");
             }

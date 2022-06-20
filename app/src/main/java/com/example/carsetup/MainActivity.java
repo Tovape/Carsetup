@@ -7,6 +7,12 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+
+import com.example.carsetup.ui.add.AddFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Variables
     Context context = this;
+    public int user_id = 0;
     private ActivityMainBinding binding;
     static public Resources.Theme theme;
     static public Fragment fragments;
@@ -50,9 +57,45 @@ public class MainActivity extends AppCompatActivity {
 
         // Get Theme
         theme = super.getTheme();
+
+        // Load login page
+        LinearLayout layoutlogin = findViewById(R.id.layout_login_container);
+        LinearLayout layoutfragments = findViewById(R.id.layout_fragment_container);
+        Button loginbutton = findViewById(R.id.loginbutton);
+        EditText username = findViewById(R.id.username);
+        EditText password = findViewById(R.id.password);
+        loginbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.d("LOGCAT", "Logging with: " + username.getText() + " " + password.getText());
+                String query = "SELECT id_users FROM users WHERE username = '" + username.getText() + "' AND password = '" + password.getText() + "'";
+                Log.d("LOGCAT", "Query: " + query);
+                LoginUser loginuser = new LoginUser(String.valueOf(username.getText()), String.valueOf(password.getText()), query);
+                loginuser.execute("");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Log.d("LOGCAT", "Logged As: " + user_id);
+
+                // Hide Login Page and reveal the fragments
+                if (user_id != 0) {
+                    layoutlogin.setVisibility(View.GONE);
+                    layoutfragments.setVisibility(View.VISIBLE);
+                } else {
+                    Log.d("LOGCAT", "Put a Toast Here");
+                }
+            }
+        });
     }
 
+    // Constructor
     public MainActivity() {}
+
+    // Getters and Setters
+    public int getUserId() {
+        return user_id;
+    }
 
     // Theme Activators
     static public void darkTheme() {
@@ -75,12 +118,49 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
-
     private void BottomNavigator(BottomNavigationView navView) {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_tasks, R.id.navigation_add, R.id.navigation_notifications, R.id.navigation_settings).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         // In case actionbar is visible - NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    // Classes
+    private class LoginUser extends AsyncTask<String, Void, String> {
+
+        private final int status = 0;
+        private String username;
+        private String password;
+        private String query;
+
+        public LoginUser(String username, String password, String query) {
+            this.username = username;
+            this.password = password;
+            this.query = query;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(query);
+                while (rs.next()) {
+                    Log.d("LOGCAT", "ID User: " + rs.getString(1));
+                    user_id = Integer.parseInt(rs.getString(1));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.toString();
+            }
+            return null;
+        }
     }
 
 }

@@ -3,25 +3,26 @@ package com.example.carsetup.ui.add;
 public class CarsearchArray {
 
     // Variables
-
-    private final int year;
+    private final int id;
     private final String make;
     private final String model;
+    private final int year;
     private final String type;
 
     // Constructor
 
-    public CarsearchArray(int year, String make, String model, String type) {
-        this.year = year;
+    public CarsearchArray(int id, String make, String model, int year, String type) {
+        this.id = id;
         this.make = make;
         this.model = model;
+        this.year = year;
         this.type = type;
     }
 
     // Get & Setters
 
-    public int getYear() {
-        return year;
+    public int getId() {
+        return id;
     }
 
     public String getMake() {
@@ -32,13 +33,17 @@ public class CarsearchArray {
         return model;
     }
 
+    public int getYear() {
+        return year;
+    }
+
     public String getType() {
         return type;
     }
 
     @Override
     public String toString() {
-        return getMake() + " " + getModel() + " " + getYear() + " " + getType();
+        return getId() + " " + getMake() + " " + getModel() + " " + getYear() + " " + getType();
     }
 
 }
