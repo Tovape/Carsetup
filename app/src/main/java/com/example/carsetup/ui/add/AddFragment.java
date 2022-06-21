@@ -18,6 +18,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.carsetup.MainActivity;
 import com.example.carsetup.R;
 import com.example.carsetup.databinding.FragmentAddBinding;
 import com.whiteelephant.monthpicker.MonthPickerDialog;
@@ -33,6 +34,7 @@ public class AddFragment extends Fragment {
 
     // Global Variables
     Context context;
+    private int user_id = 0;
     private AddViewModel addViewModel;
     private FragmentAddBinding binding;
     EditText manufacturer;
@@ -49,6 +51,11 @@ public class AddFragment extends Fragment {
         binding = FragmentAddBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         context = getActivity();
+
+        // Get User Login
+        MainActivity mainActivity = new MainActivity();
+        user_id = mainActivity.getUserId();
+        Log.d("LOGCAT", "Add Fragment User ID: " + user_id);
 
         // Get Variables
         manufacturer = root.findViewById(R.id.manufacturer);
@@ -210,7 +217,6 @@ public class AddFragment extends Fragment {
 
     private class CarBinder extends AsyncTask<String, Void, String> {
 
-        private final int status = 0;
         private int car_id;
         private int user_id;
 
@@ -226,25 +232,21 @@ public class AddFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... strings) {
-
-            Log.d("LOGCAT", String.valueOf(user_id) + String.valueOf(car_id));
-            /*
-
+            Log.d("LOGCAT", "Inserting " + String.valueOf(user_id) + String.valueOf(car_id));
+            String query = "UPDATE users SET garage = concat(ifnull(garage,''), ' " + car_id + "') WHERE id_users = " + user_id;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
                 Statement st = con.createStatement();
-                int result = st.executeUpdate("");
+                int result = st.executeUpdate(query);
                 if (result == 1) {
-                    Log.d("LOGCAT", "Car Inserted");
+                    Log.d("LOGCAT", "Database Updated");
                 } else {
-                    Log.d("LOGCAT", "Error while inserting car");
+                    Log.d("LOGCAT", "Error Parsing Database");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            */
-
             return null;
         }
     }
@@ -303,7 +305,13 @@ public class AddFragment extends Fragment {
                 Log.d("LOGCAT", "Car: " + carsearchdata.get(Integer.parseInt(position)));
                 // Add Car into User Row
                 String[] splited = carsearchdata.get(Integer.parseInt(position)).split("\\s+");
-                CarBinder carbinder = new CarBinder(1, Integer.parseInt(splited[0]));
+                CarBinder carbinder = new CarBinder(user_id, Integer.parseInt(splited[0]));
+                carbinder.execute("");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 Log.d("LOGCAT", "No Car Selected");
             }

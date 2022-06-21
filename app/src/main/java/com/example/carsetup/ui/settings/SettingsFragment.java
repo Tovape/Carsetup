@@ -28,6 +28,8 @@ import org.apache.tools.ant.Main;
 public class SettingsFragment extends Fragment {
 
     // Variables
+    private int user_id = 0;
+    private int user_theme = 0;
     private SettingsViewModel settingsViewModel;
     private FragmentSettingsBinding binding;
     public Resources.Theme themeSender;
@@ -38,12 +40,27 @@ public class SettingsFragment extends Fragment {
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // Get User Login
+        MainActivity mainActivity = new MainActivity();
+        user_id = mainActivity.getUserId();
+        user_theme = mainActivity.getUserTheme();
+
+        Log.d("LOGCAT", "Settings Fragment User ID: " + user_id);
+        Log.d("LOGCAT", "Theme Saved in Fragment " + user_theme);
+
         // Get Ids
         SwitchCompat themeswitch = root.findViewById(R.id.themeswitch);
 
+        if (user_theme == 0) {
+            themeswitch.setChecked(false);
+            themeswitch.setText("Light Theme");
+        } else if (user_theme == 1) {
+            themeswitch.setChecked(true);
+            themeswitch.setText("Dark Theme");
+        } else {}
+
         // Theme Listener
         Resources.Theme theme;
-        MainActivity mainActivity = new MainActivity();
         themeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
