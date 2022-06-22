@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -61,7 +63,7 @@ public class AddFragment extends Fragment {
         manufacturer = root.findViewById(R.id.manufacturer);
         model = root.findViewById(R.id.model);
         year = root.findViewById(R.id.yearselector);
-        insertcar = root.findViewById(R.id.insertcar);
+        //insertcar = root.findViewById(R.id.insertcar);
         searchcar = root.findViewById(R.id.searchcar);
 
         // Check Connection Database
@@ -78,6 +80,7 @@ public class AddFragment extends Fragment {
         });
 
         // Insert Car
+        /*
         insertcar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String query = "INSERT INTO cars VALUES (null, '" + manufacturer.getText() + "', '" +  model.getText() + "', '" + yearselected + "')";
@@ -85,6 +88,7 @@ public class AddFragment extends Fragment {
                 insertcar.execute("");
             }
         });
+        */
 
         // Search Car
         searchcar.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +97,7 @@ public class AddFragment extends Fragment {
                 String query = "SELECT id, make, model, year_from, body_type FROM car_db WHERE make LIKE UPPER('%" + manufacturer.getText() + "%') " +
                                 "AND model LIKE UPPER('%" + model.getText() + "%') AND make IS NOT NULL AND make <> ''" +
                                 " AND model IS NOT NULL AND model <> '' AND year_from IS NOT NULL AND year_from <> '' AND " +
-                                "body_type IS NOT NULL AND body_type <> '' ORDER BY year_from LIMIT 10";
+                                "body_type IS NOT NULL AND body_type <> '' AND year_from = '" + yearselected + "' ORDER BY year_from LIMIT 10";
                 Log.d("LOGCAT", "Query: " + query);
                 carsearcheach.removeAll(carsearcheach);
                 carsearchdata.removeAll(carsearchdata);

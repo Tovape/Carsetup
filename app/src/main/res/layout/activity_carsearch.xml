@@ -23,16 +23,35 @@
 
             <!-- Top Bar -->
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:gravity="left"
-                android:paddingStart="4dp"
-                android:paddingEnd="4dp"
-                android:singleLine="true"
-                android:text="Results"
-                android:textColor="?attr/white"
-                android:textSize="@dimen/bigFont" />
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:gravity="left"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:singleLine="true"
+                    android:text="Results"
+                    android:textColor="?attr/white"
+                    android:textSize="@dimen/bigFont" />
+
+                <ImageButton
+                    android:id="@+id/goback"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/goback"
+                    android:background="#00ff0000"
+                    android:scaleType="fitCenter"
+                    android:text="Hello"/>
+
+            </LinearLayout>
 
                 <!-- List -->
 

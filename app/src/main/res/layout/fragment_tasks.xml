@@ -34,6 +34,25 @@
                 android:textColor="?attr/white"
                 android:textSize="@dimen/bigFont" />
 
+            <!-- List -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/mainPadding">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/garage_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/mainPadding"
+                    android:paddingBottom="@dimen/mainPadding"
+                    android:scrollbars="vertical"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>

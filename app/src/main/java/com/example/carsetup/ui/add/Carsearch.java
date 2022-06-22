@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.carsetup.R;
 import com.example.carsetup.RecyclerViewOnItemClickListener;
@@ -38,6 +40,10 @@ public class Carsearch extends AppCompatActivity {
             Log.d("LOGCAT", "Car Search Getter: " + carsearchdata.get(i));
         }
 
+        if (carsearchdata.size() == 0) {
+            Toast.makeText(context, "No Cars Found", Toast.LENGTH_SHORT).show();
+        }
+
         // Getting Instance
         RecyclerView recyclerView = findViewById(R.id.car_results);
 
@@ -50,8 +56,7 @@ public class Carsearch extends AppCompatActivity {
         }));
 
         // Go Back
-        /*
-        Button goBack = findViewById(R.id.goback);
+        ImageButton goBack = findViewById(R.id.goback);
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +64,6 @@ public class Carsearch extends AppCompatActivity {
                 finish();
             }
         });
-        */
 
         // Vertical
         recyclerView.setLayoutManager(new LinearLayoutManager(context));

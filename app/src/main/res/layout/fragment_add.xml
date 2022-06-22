@@ -95,19 +95,19 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="1">
-
+                    <!--
                     <Button
                         android:id="@+id/insertcar"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.5"
                         android:text="Insert Car"/>
-
+                    -->
                     <Button
                         android:id="@+id/searchcar"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.5"
+                        android:layout_weight="1"
                         android:text="Search Car"/>
 
                 </LinearLayout>
