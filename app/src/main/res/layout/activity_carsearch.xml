@@ -68,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="@dimen/mainPadding"
                         android:paddingBottom="@dimen/mainPadding"
-                        android:scrollbars="vertical"/>
+                        android:scrollbars="vertical" />
 
                 </LinearLayout>
 

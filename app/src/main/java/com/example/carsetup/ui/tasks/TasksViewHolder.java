@@ -17,7 +17,6 @@ import com.example.carsetup.ui.notifications.NotificationsArray;
 
 public class TasksViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-
     private final TextView lineTextview;
     private final ImageView cartypeimage;
     private final RecyclerViewOnItemClickListener listener;

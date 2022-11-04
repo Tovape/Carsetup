@@ -1,0 +1,2 @@
+Now do an active car selection, press button and that car is selected
+from there update home fragment with car info idk

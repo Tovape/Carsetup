@@ -8,13 +8,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.carsetup.R;
 import com.example.carsetup.RecyclerViewOnItemClickListener;
-
 import java.util.ArrayList;
 
 public class CarsearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
