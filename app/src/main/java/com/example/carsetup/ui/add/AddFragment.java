@@ -128,7 +128,7 @@ public class AddFragment extends Fragment {
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test3", "test3");
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery("SELECT * FROM connection LIMIT 1");
                 ResultSetMetaData rsmd = rs.getMetaData();
@@ -240,7 +240,7 @@ public class AddFragment extends Fragment {
             String query = "UPDATE users SET garage = concat(ifnull(garage,''), ' " + car_id + "') WHERE id_users = " + user_id;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test3", "test3");
                 Statement st = con.createStatement();
                 int result = st.executeUpdate(query);
                 if (result == 1) {

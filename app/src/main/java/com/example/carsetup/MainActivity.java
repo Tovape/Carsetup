@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             int result = 0;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test3", "test3");
                 Statement st = con.createStatement();
                 if (option == 0) {
                     result = st.executeUpdate("UPDATE users SET theme = 0 WHERE id_users = " + user_id);
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             int theme = 0;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test3", "test3");
                 Statement st = con.createStatement();
                 ResultSet resultSet = st.executeQuery("SELECT theme FROM users WHERE id_users = " + user_id + " LIMIT 1");
                 while (resultSet.next()) {
@@ -244,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test2", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/carsetup", "test3", "test3");
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(query);
                 while (rs.next()) {
